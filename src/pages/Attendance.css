@@ -1,0 +1,126 @@
+/* Attendance.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Change background color to white */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the body takes the full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%; /* Make the container take full width */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.summary-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 20px; /* Add margin to the top and bottom */
+}
+
+.summary-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 20%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px; /* Add margin to each card */
+}
+
+.summary-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.attendance-table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.attendance-table {
+    width: 100%; /* Make the table take full width */
+    max-width: 1200px; /* Set a maximum width for the table */
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.attendance-table th, .attendance-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd; /* Add this line to show vertical lines */
+}
+
+.attendance-table th {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.attendance-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.header-cell, .month-cell, .data-cell {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.header-cell {
+    background-color: #f2f2f2;
+}
+
+.month-cell {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.data-cell {
+    width: 20px;
+    height: 20px;
+}
