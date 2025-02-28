@@ -1,0 +1,19 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+    margin-top: 100px; /* Adjust if Header height differs */
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background: #f4f4f4;
+    min-height: calc(100vh - 60px); /* Adjust to fit under the header */
+  }
+  
