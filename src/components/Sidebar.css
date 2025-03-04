@@ -1,83 +1,72 @@
 /* Sidebar Container */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background: #2c3e50;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-  }
-  
-  /* School Logo and Name */
-  .sidebar-header {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  
-  .school-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-  
-  .school-name {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  /* Menu List */
-  .menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu-item {
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-  
-  .menu-item:hover {
-    background: #34495e;
-  }
-  
-  .menu-icon {
-    margin-right: 10px;
-  }
-  
-  /* Submenu */
-  .submenu {
-    background: #3b4f68;
-    padding: 10px 30px;
-    list-style: none;
-  }
-  
-  .arrow {
-    font-size: 14px;
-  }
-  
-  a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from parent */
-    font-weight: normal; /* Remove bold */
-    font-size: inherit; /* Keep default font size */
-    background: none; /* Remove any background */
-    border: none; /* Remove any border */
+  width: 250px;
+  height: 100vh;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
 
-  }
+/* School Logo and Name */
+.sidebar-header {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.school-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.school-name {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
   
-  /* Remove hover effects */
-  a:hover,
-  a:focus,
-  a:active {
-    text-decoration: none; /* No underline on hover */
-    color: inherit; /* Keep original text color */
-    background: none; /* No background change */
-    border: none; /* No border change */
-    outline: none; /* Remove focus outline */
-  }
-  
+
+}
+
+.menu-item:hover {
+  background: #34495e;
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+/* Submenu */
+.submenu {
+  background: #3b4f68;
+  padding: 10px 30px;
+  list-style: none;
+}
+
+.arrow {
+  font-size: 14px;
+}
+

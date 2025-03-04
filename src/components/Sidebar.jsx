@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.css"; // Import CSS file
 
-const Sidebar = () => {
+const Sidebar = ({ setActivePage }) => {
   const [openResult, setOpenResult] = useState(false);
   const [openPayment, setOpenPayment] = useState(false);
+  const [activeItem, setActiveItem] = useState("dashboard"); // ✅ Track active page
+
+  useEffect(() => {
+    setActivePage(activeItem); // ✅ Ensure the page updates on first render
+  }, [activeItem, setActivePage]);
 
   return (
     <div className="sidebar">
@@ -15,23 +20,47 @@ const Sidebar = () => {
 
       {/* Sidebar Menu */}
       <ul className="menu-list">
-        {/* Dashboard */}
-        <li className="menu-item" style={{marginRight:"60px"}}>
-            <span className="menu-icon">🏠</span> Dashboard
+        {/* Attendance */}
+        <li className={`menu-item ${activeItem === "attendance" ? "active" : ""}`}>
+          <button 
+            onClick={() => setActiveItem("attendance")}
+            style={{ textDecoration: "none", color: "inherit", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+          >
+            <span className="menu-icon" style={{ marginRight: "50px" }}>🏠</span> Attendance
+          </button>
         </li>
+
         {/* Result (Collapsible) */}
         <li className="menu-item" onClick={() => setOpenResult(!openResult)}>
           <span className="menu-icon">📊</span> Result
           <span className="arrow">{openResult ? "▲" : "▼"}</span>
         </li>
-        {openResult && <ul className="submenu"><li>View Results</li></ul>}
+        {openResult && (
+          <ul className="submenu">
+            <li 
+              style={{ marginLeft: "60px", fontStyle: "italic", cursor: "pointer" }} 
+              onClick={() => setActiveItem("result")}
+            >
+              View Results
+            </li>
+          </ul>
+        )}
 
         {/* Payment (Collapsible) */}
         <li className="menu-item" onClick={() => setOpenPayment(!openPayment)}>
           <span className="menu-icon">💳</span> Payment
           <span className="arrow">{openPayment ? "▲" : "▼"}</span>
         </li>
-        {openPayment && <ul className="submenu"><li>Make a Payment</li></ul>}
+        {openPayment && (
+          <ul className="submenu">
+            <li 
+              style={{ marginLeft: "50px", fontStyle: "italic", cursor: "pointer" }} 
+              onClick={() => setActiveItem("payment")}
+            >
+              Make a Payment
+            </li>
+          </ul>
+        )}
       </ul>
     </div>
   );

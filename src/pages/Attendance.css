@@ -1,83 +1,77 @@
-/* Attendance.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff; /* Change background color to white */
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Ensure the body takes the full height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
+/* Ensure the Attendance container fits inside the main content */
 .container {
-    width: 100%; /* Make the container take full width */
+    width: 100%;
     padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
+/* Header styling */
 .header {
     text-align: center;
-    padding: 20px 0;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
+    width: 100%;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.8em;
     color: #333;
 }
 
+/* Summary Cards */
 .summary-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 100%;
-    margin: 20px 20px; /* Add margin to the top and bottom */
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 .summary-card {
     background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 20%;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin: 10px; /* Add margin to each card */
+    width: 22%;
+    transition: 0.3s;
 }
 
 .summary-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Attendance Table */
 .attendance-table-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 .attendance-table {
-    width: 100%; /* Make the table take full width */
-    max-width: 1200px; /* Set a maximum width for the table */
+    width: 100%;
+    max-width: 1200px; /* Prevents excessive stretching */
     border-collapse: collapse;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 
-.attendance-table th, .attendance-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd; /* Add this line to show vertical lines */
+.attendance-table th,
+.attendance-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
 .attendance-table th {
     background-color: #f8f8f8;
-    color: #333;
+    font-weight: bold;
 }
 
 .attendance-table tr:nth-child(even) {
@@ -88,39 +82,21 @@ body {
     background-color: #f1f1f1;
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+/* Responsive Fix */
+@media screen and (max-width: 1024px) {
+    .summary-card {
+        width: 45%; /* Adjust for smaller screens */
+        margin-bottom: 15px;
+    }
 }
 
-.button:hover {
-    background-color: #0056b3;
-}
+@media screen and (max-width: 768px) {
+    .summary-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.header-cell, .month-cell, .data-cell {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.header-cell {
-    background-color: #f2f2f2;
-}
-
-.month-cell {
-    background-color: #f9f9f9;
-    font-weight: bold;
-}
-
-.data-cell {
-    width: 20px;
-    height: 20px;
+    .summary-card {
+        width: 90%;
+    }
 }

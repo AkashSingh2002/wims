@@ -1,17 +1,19 @@
-import React from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import React, { useState } from "react";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
+import Attendance from "../pages/Attendance";
 import "./Dashboard.css";
 
 const Dashboard = () => {
+  const [activePage, setActivePage] = useState("dashboard");
+
   return (
     <div className="dashboard-container">
       <Header />
       <div className="dashboard-content">
-        <Sidebar />
+        <Sidebar setActivePage={setActivePage} />
         <main className="main-content">
-          <h2>Welcome to the Dashboard</h2>
-          <p>Manage your data and settings from here.</p>
+          {activePage === "dashboard" ? <h2>Welcome to the Dashboard</h2> : <Attendance />}
         </main>
       </div>
     </div>

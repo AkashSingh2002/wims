@@ -46,9 +46,6 @@ const Attendance = () => {
 
     return (
         <div className="container">
-            <div className="header">
-                <h1>Attendance Record</h1>
-            </div>
             <div className="year-dropdown">
                 <label htmlFor="year">Select Year: </label>
                 <select id="year" value={year} onChange={(e) => setYear(e.target.value)}>
